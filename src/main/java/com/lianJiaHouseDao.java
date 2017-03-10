@@ -46,20 +46,20 @@ public class lianJiaHouseDao {
         }
         return -1;
     }
-    
+
     public List<String> getAll() {
         String sql = "select `longitude`,`price` from houseinfo ";
         PreparedStatement pstmt;
         List<String> houselist = new ArrayList<String>();
         try {
-            pstmt = (PreparedStatement)conn.prepareStatement(sql);
+            pstmt = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
             while (rs.next()) {
                 for (int i = 1; i <= col; i++) {
                     houselist.add(rs.getString(i));
-                    //System.out.print(rs.getString(i));
-                 }
+                    // System.out.print(rs.getString(i));
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

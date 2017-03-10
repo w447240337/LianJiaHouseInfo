@@ -18,9 +18,9 @@ public class buildJson {
         List<String> list = new lianJiaHouseDao().getAll();
         System.out.println(list);
         List<HashMap<String, String>> mMenuData = new ArrayList<>();
-        for (int i = 0; i < list.size(); i=i+2) {
+        for (int i = 0; i < list.size(); i = i + 2) {
             HashMap<String, String> map = new HashMap<>();
-            map.put("coord","[" + list.get(i) + "]");
+            map.put("coord", "[" + list.get(i) + "]");
             int a = i + 1;
             map.put("price", list.get(a));
             mMenuData.add(map);
@@ -42,9 +42,9 @@ public class buildJson {
             String group2 = matcher2.group();
             s = s.replace(group2, group2.substring(1, group2.length() - 1));
         }
-        Writer write = new FileWriter(file);  
-        write.write(s);  
-        write.flush();  
+        Writer write = new FileWriter(file);
+        write.write(s);
+        write.flush();
         write.close();
     }
 }
